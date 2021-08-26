@@ -17,7 +17,7 @@ class Textbox extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label for='response'></label>
+        <label htmlFor='response'></label>
         <input
           type='text'
           id='response'

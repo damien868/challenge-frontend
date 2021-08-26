@@ -20,8 +20,14 @@ export class FirstQuestion extends Component {
     return (
       <div>
         <div>What is your name?</div>
-        <Response />
-        {data.answered ? <SecondQuestion /> : ''}
+
+        {data.answered ? (
+          <div>
+            <Response response={this.state.responseData} /> <SecondQuestion />
+          </div>
+        ) : (
+          ''
+        )}
         <Textbox handleResponse={this.handleResponse} />
       </div>
     );

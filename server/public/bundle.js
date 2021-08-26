@@ -68,7 +68,9 @@ class FirstQuestion extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 
   render() {
     const data = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "What is your name?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Response__WEBPACK_IMPORTED_MODULE_1__.default, null), data.answered ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SecondQuestion__WEBPACK_IMPORTED_MODULE_3__.default, null) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Textbox__WEBPACK_IMPORTED_MODULE_2__.default, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "What is your name?"), data.answered ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Response__WEBPACK_IMPORTED_MODULE_1__.default, {
+      response: this.state.responseData
+    }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SecondQuestion__WEBPACK_IMPORTED_MODULE_3__.default, null)) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Textbox__WEBPACK_IMPORTED_MODULE_2__.default, {
       handleResponse: this.handleResponse
     }));
   }
@@ -110,6 +112,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 class Response extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render(props) {
     return this.props.response ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.props.response) : '';
   }
@@ -180,7 +186,7 @@ class Textbox extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
       onSubmit: this.handleSubmit
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
-      for: "response"
+      htmlFor: "response"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
       type: "text",
       id: "response",
