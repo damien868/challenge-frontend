@@ -20,11 +20,14 @@ export class FirstQuestion extends Component {
     const data = this.state;
     return (
       <div>
-        <div className='question'>What is your name?</div>
+        <br></br>
+        <div className='question'>What's your name?</div>
 
         {data.answered ? (
           <div>
-            <Response response={this.state.responseData} />{' '}
+            <div className='response'>
+              <Response response={this.state.responseData} />
+            </div>
             <SecondQuestion response={this.state.responseData} />
           </div>
         ) : (

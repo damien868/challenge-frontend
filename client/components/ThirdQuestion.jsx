@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Pronouns from './Pronouns';
+import '../styles/ThirdQuestion.css';
 
 export class ThirdQuestion extends Component {
   constructor(props) {
@@ -18,8 +19,13 @@ export class ThirdQuestion extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.result}</div>
-        <div>Now that I know you a little better; what are your pronouns?</div>
+        <div className='response'>{this.props.result}</div>
+        <br></br>
+        <div>
+          Now that I know you a little better;{' '}
+          <span className='question'>what are your pronouns?</span>
+        </div>
+        <br></br>
         {!this.state.submitted ? (
           <div>
             <Pronouns handleClick={this.handleClick} />
@@ -36,7 +42,7 @@ export class ThirdQuestion extends Component {
             )}
           </div>
         ) : (
-          this.state.response
+          <div className='response'>{this.state.response}</div>
         )}
       </div>
     );

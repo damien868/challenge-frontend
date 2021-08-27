@@ -1,0 +1,23 @@
+.questionare {
+  display: row;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  border: solid 1px blue;
+  border-radius: 10px;
+}
+.choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.options {
+  padding: 10px;
+}
+.prompt {
+  color: gray;
+  flex-direction: row;
+  padding: 5px;
+  margin: 5px;
+}

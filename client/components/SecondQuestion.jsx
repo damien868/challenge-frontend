@@ -42,12 +42,15 @@ export class SecondQuestion extends Component {
     return (
       <div>
         <div>DamienBot</div>
-        <div>Nice to meet you {data.response}! </div>
+        <div>
+          Nice to meet you <span className='question'>{data.response}</span>!{' '}
+        </div>
         <div>
           Since this is your first time meeting me, let's say my birthday is
           {` ${months[month + 1]} ${day}, ${year}`}
         </div>
-        <div>When's your birthday?</div>
+        <br></br>
+        <div className='question'>When's your birthday?</div>
         {this.state.birthdayDate === '' ? (
           <ReactCalendar handleBirthday={this.handleBirthday} />
         ) : (

@@ -5,6 +5,7 @@
   top: 5%;
   width: 100%;
   overflow: hidden;
+  font-family: sans-serif;
 }
 .imageContainer {
   display: flex;
@@ -23,7 +24,7 @@ hr {
   margin-left: 0;
   margin-right: 0;
 }
-img {
+.images {
   border-radius: 10px;
   outline: 1px solid blue;
   padding: 2px;

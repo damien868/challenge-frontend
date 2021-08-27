@@ -1,0 +1,8 @@
+.response {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.question {
+  font-weight: bold;
+}
