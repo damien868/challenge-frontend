@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Textbox.css';
 
 class Textbox extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Textbox extends Component {
           type='text'
           id='response'
           name='response'
+          placeholder='Start typing here'
           onChange={this.onChange}
         ></input>
         <input type='submit'></input>

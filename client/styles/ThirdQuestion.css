@@ -18,12 +18,12 @@
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
-  /* display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center; */
   background-color: rgb(108, 70, 214);
   color: white;
-  width: 75px;
-  left: 50%;
+}
+.subButton {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
