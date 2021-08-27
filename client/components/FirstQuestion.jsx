@@ -23,12 +23,13 @@ export class FirstQuestion extends Component {
 
         {data.answered ? (
           <div>
-            <Response response={this.state.responseData} /> <SecondQuestion />
+            <Response response={this.state.responseData} />{' '}
+            <SecondQuestion response={this.state.responseData} />
           </div>
         ) : (
           ''
         )}
-        <Textbox handleResponse={this.handleResponse} />
+        {!data.answered ? <Textbox handleResponse={this.handleResponse} /> : ''}
       </div>
     );
   }
