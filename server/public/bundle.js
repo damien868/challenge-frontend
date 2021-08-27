@@ -517,6 +517,34 @@ function Intro() {
 
 /***/ }),
 
+/***/ "./client/components/Pronouns.jsx":
+/*!****************************************!*\
+  !*** ./client/components/Pronouns.jsx ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Pronouns)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+function Pronouns(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Select One"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "icons8-boy-48.png",
+    onClick: () => props.handleClick('he/him')
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "he/him"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "icons8-girl-48.png",
+    onClick: () => props.handleClick('she/her')
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "she/her"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "icons8-smiling-face-with-smiling-eyes-48.png",
+    onClick: () => props.handleClick('they/them')
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "they/them"));
+}
+
+/***/ }),
+
 /***/ "./client/components/ReactCalendar.jsx":
 /*!*********************************************!*\
   !*** ./client/components/ReactCalendar.jsx ***!
@@ -534,18 +562,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ReactCalendar() {
+function ReactCalendar(props) {
   const [date, setDate] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date());
 
   const onChange = date => {
     setDate(date);
-    console.log(date);
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_2__.default, {
     onChange: onChange,
     value: date
-  }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: () => props.handleBirthday(date.getMonth(), date.getDate(), date.getFullYear())
+  }, "Submit"));
 }
 
 /***/ }),
@@ -592,12 +621,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _ReactCalendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ReactCalendar */ "./client/components/ReactCalendar.jsx");
+/* harmony import */ var _ThirdQuestion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThirdQuestion */ "./client/components/ThirdQuestion.jsx");
+
 
 
 class SecondQuestion extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      birthdayMonth: '',
+      birthdayDate: '',
+      birthdayYear: ''
+    };
+    this.handleBirthday = this.handleBirthday.bind(this);
   }
+
+  handleBirthday = (month, date, year) => {
+    this.setState({
+      birthdayMonth: `${month + 1}`,
+      birthdayDate: `${date}`,
+      birthdayYear: `${year}`
+    });
+  };
 
   render() {
     const data = this.props;
@@ -619,7 +664,11 @@ class SecondQuestion extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       11: 'November',
       12: 'December'
     };
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "DamienBot"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Nice to meet you ", data.response, "! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Since this is your first time meeting me, let's say my birthday is", ` ${months[month + 1]} ${day}, ${year}`), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "When's your birthday?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReactCalendar__WEBPACK_IMPORTED_MODULE_1__.default, null));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "DamienBot"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Nice to meet you ", data.response, "! "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Since this is your first time meeting me, let's say my birthday is", ` ${months[month + 1]} ${day}, ${year}`), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "When's your birthday?"), this.state.birthdayDate === '' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReactCalendar__WEBPACK_IMPORTED_MODULE_1__.default, {
+      handleBirthday: this.handleBirthday
+    }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ThirdQuestion__WEBPACK_IMPORTED_MODULE_2__.default, {
+      result: ` ${months[parseInt(this.state.birthdayMonth)]} ${this.state.birthdayDate}, ${this.state.birthdayYear}`
+    }));
   }
 
 }
@@ -680,6 +729,62 @@ class Textbox extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Textbox);
+
+/***/ }),
+
+/***/ "./client/components/ThirdQuestion.jsx":
+/*!*********************************************!*\
+  !*** ./client/components/ThirdQuestion.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ThirdQuestion": () => (/* binding */ ThirdQuestion),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Pronouns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pronouns */ "./client/components/Pronouns.jsx");
+
+
+class ThirdQuestion extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      response: '',
+      clicked: false,
+      submitted: false
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.submitAnswer = this.submitAnswer.bind(this);
+  }
+
+  handleClick = responseOption => {
+    this.setState({
+      response: responseOption,
+      clicked: true
+    });
+  };
+  submitAnswer = () => {
+    console.log('clicked');
+    this.setState({
+      submitted: true
+    });
+  };
+
+  render() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.props.result), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Now that I know you a little better; what are your pronouns?"), !this.state.submitted ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Pronouns__WEBPACK_IMPORTED_MODULE_1__.default, {
+      handleClick: this.handleClick
+    }), !this.state.clicked ? '' : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      onClick: () => {
+        this.submitAnswer();
+      }
+    }, "Submit")) : this.state.response);
+  }
+
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThirdQuestion);
 
 /***/ }),
 

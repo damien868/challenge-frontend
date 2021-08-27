@@ -1,10 +1,24 @@
 import React, { Component, useState } from 'react';
 import ReactCalendar from './ReactCalendar';
+import ThirdQuestion from './ThirdQuestion';
 
 export class SecondQuestion extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      birthdayMonth: '',
+      birthdayDate: '',
+      birthdayYear: '',
+    };
+    this.handleBirthday = this.handleBirthday.bind(this);
   }
+  handleBirthday = (month, date, year) => {
+    this.setState({
+      birthdayMonth: `${month + 1}`,
+      birthdayDate: `${date}`,
+      birthdayYear: `${year}`,
+    });
+  };
   render() {
     const data = this.props;
     const today = new Date();
@@ -34,7 +48,15 @@ export class SecondQuestion extends Component {
           {` ${months[month + 1]} ${day}, ${year}`}
         </div>
         <div>When's your birthday?</div>
-        <ReactCalendar />
+        {this.state.birthdayDate === '' ? (
+          <ReactCalendar handleBirthday={this.handleBirthday} />
+        ) : (
+          <ThirdQuestion
+            result={` ${months[parseInt(this.state.birthdayMonth)]} ${
+              this.state.birthdayDate
+            }, ${this.state.birthdayYear}`}
+          />
+        )}
       </div>
     );
   }
