@@ -1,0 +1,8 @@
+.question {
+  font-weight: bold;
+}
+#textbox {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+}

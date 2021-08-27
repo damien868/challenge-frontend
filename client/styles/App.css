@@ -1,0 +1,31 @@
+.entireContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  overflow: hidden;
+}
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.start {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+hr {
+  border: 1px solid grey;
+  margin-left: 0;
+  margin-right: 0;
+}
+img {
+  border-radius: 10px;
+  outline: 1px solid blue;
+  padding: 2px;
+  margin: 10px;
+}
