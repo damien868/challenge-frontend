@@ -558,6 +558,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Pronouns(props) {
+  const mark = (el, classList, pronoun) => {
+    classList.forEach(node => node.style.border = 'none');
+    el.style.border = 'solid 1px blue';
+    el.style.margin = '5px';
+    el.style.padding = '5px';
+    props.handleClick(pronoun);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "questionare"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -565,20 +573,23 @@ function Pronouns(props) {
   }, "Select One"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "choices"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "options"
+    className: "options",
+    id: "he"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "icons8-boy-48.png",
-    onClick: () => props.handleClick('he/him')
+    onClick: () => mark(document.getElementById('he'), document.querySelectorAll('.options'), 'he/him')
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "he/him")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "options"
+    className: "options",
+    id: "she"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "icons8-girl-48.png",
-    onClick: () => props.handleClick('she/her')
+    onClick: () => mark(document.getElementById('she'), document.querySelectorAll('.options'), 'she/her')
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "she/her")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "options"
+    className: "options",
+    id: "they"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "icons8-smiling-face-with-smiling-eyes-48.png",
-    onClick: () => props.handleClick('they/them')
+    onClick: () => mark(document.getElementById('they'), document.querySelectorAll('.options'), 'they/them')
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "they/them"))));
 }
 
@@ -823,9 +834,12 @@ class ThirdQuestion extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       className: "response"
     }, this.props.result), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Now that I know you a little better;", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
       className: "question"
-    }, "what are your pronouns?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), !this.state.submitted ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Pronouns__WEBPACK_IMPORTED_MODULE_1__.default, {
+    }, "what are your pronouns?")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), !this.state.submitted ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "questionareBox"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Pronouns__WEBPACK_IMPORTED_MODULE_1__.default, {
       handleClick: this.handleClick
     }), !this.state.clicked ? '' : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      id: "pronouns",
       onClick: () => {
         this.submitAnswer();
       }
@@ -913,7 +927,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".questionare {\n  display: row;\n  flex-direction: column;\n  align-content: center;\n  justify-content: center;\n  border: solid 1px blue;\n  border-radius: 10px;\n}\n.choices {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-content: center;\n}\n.options {\n  padding: 10px;\n}\n.prompt {\n  color: gray;\n  flex-direction: row;\n  padding: 5px;\n  margin: 5px;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/Pronouns.css"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,sBAAsB;EACtB,qBAAqB;EACrB,uBAAuB;EACvB,sBAAsB;EACtB,mBAAmB;AACrB;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,qBAAqB;AACvB;AACA;EACE,aAAa;AACf;AACA;EACE,WAAW;EACX,mBAAmB;EACnB,YAAY;EACZ,WAAW;AACb","sourcesContent":[".questionare {\n  display: row;\n  flex-direction: column;\n  align-content: center;\n  justify-content: center;\n  border: solid 1px blue;\n  border-radius: 10px;\n}\n.choices {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-content: center;\n}\n.options {\n  padding: 10px;\n}\n.prompt {\n  color: gray;\n  flex-direction: row;\n  padding: 5px;\n  margin: 5px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".questionare {\n  display: row;\n  flex-direction: column;\n  align-content: center;\n}\n.choices {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-content: center;\n}\n.options {\n  padding: 10px;\n}\n.options.active {\n  border: solid 1px rgb(198, 198, 202);\n  padding: 5px;\n  margin: 5px;\n}\n.prompt {\n  color: gray;\n  flex-direction: row;\n  padding: 5px;\n  margin: 5px;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/Pronouns.css"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,sBAAsB;EACtB,qBAAqB;AACvB;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,qBAAqB;AACvB;AACA;EACE,aAAa;AACf;AACA;EACE,oCAAoC;EACpC,YAAY;EACZ,WAAW;AACb;AACA;EACE,WAAW;EACX,mBAAmB;EACnB,YAAY;EACZ,WAAW;AACb","sourcesContent":[".questionare {\n  display: row;\n  flex-direction: column;\n  align-content: center;\n}\n.choices {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-content: center;\n}\n.options {\n  padding: 10px;\n}\n.options.active {\n  border: solid 1px rgb(198, 198, 202);\n  padding: 5px;\n  margin: 5px;\n}\n.prompt {\n  color: gray;\n  flex-direction: row;\n  padding: 5px;\n  margin: 5px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -940,7 +954,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n.question {\n  font-weight: bold;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/ThirdQuestion.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,mBAAmB;EACnB,yBAAyB;AAC3B;AACA;EACE,iBAAiB;AACnB","sourcesContent":[".response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n.question {\n  font-weight: bold;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n.question {\n  font-weight: bold;\n}\n.questionareBox {\n  display: row;\n  flex-direction: column;\n  align-content: center;\n  justify-content: center;\n  border: solid 3px blue;\n  border-radius: 10px;\n}\n#pronouns {\n  padding: 5px;\n  margin: 5px;\n  border-radius: 10px;\n  flex-direction: row;\n  align-content: center;\n  justify-content: center;\n  background-color: rgb(108, 70, 214);\n  color: white;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/ThirdQuestion.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,mBAAmB;EACnB,yBAAyB;AAC3B;AACA;EACE,iBAAiB;AACnB;AACA;EACE,YAAY;EACZ,sBAAsB;EACtB,qBAAqB;EACrB,uBAAuB;EACvB,sBAAsB;EACtB,mBAAmB;AACrB;AACA;EACE,YAAY;EACZ,WAAW;EACX,mBAAmB;EACnB,mBAAmB;EACnB,qBAAqB;EACrB,uBAAuB;EACvB,mCAAmC;EACnC,YAAY;AACd","sourcesContent":[".response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n.question {\n  font-weight: bold;\n}\n.questionareBox {\n  display: row;\n  flex-direction: column;\n  align-content: center;\n  justify-content: center;\n  border: solid 3px blue;\n  border-radius: 10px;\n}\n#pronouns {\n  padding: 5px;\n  margin: 5px;\n  border-radius: 10px;\n  flex-direction: row;\n  align-content: center;\n  justify-content: center;\n  background-color: rgb(108, 70, 214);\n  color: white;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

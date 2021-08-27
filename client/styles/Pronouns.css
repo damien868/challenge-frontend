@@ -2,9 +2,6 @@
   display: row;
   flex-direction: column;
   align-content: center;
-  justify-content: center;
-  border: solid 1px blue;
-  border-radius: 10px;
 }
 .choices {
   display: flex;
@@ -14,6 +11,11 @@
 }
 .options {
   padding: 10px;
+}
+.options.active {
+  border: solid 1px rgb(198, 198, 202);
+  padding: 5px;
+  margin: 5px;
 }
 .prompt {
   color: gray;

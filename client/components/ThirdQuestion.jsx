@@ -27,12 +27,13 @@ export class ThirdQuestion extends Component {
         </div>
         <br></br>
         {!this.state.submitted ? (
-          <div>
+          <div className='questionareBox'>
             <Pronouns handleClick={this.handleClick} />
             {!this.state.clicked ? (
               ''
             ) : (
               <button
+                id='pronouns'
                 onClick={() => {
                   this.submitAnswer();
                 }}
