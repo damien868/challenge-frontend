@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import '../styles/Textbox.css';
 
 class Textbox extends Component {
@@ -26,7 +27,7 @@ class Textbox extends Component {
           placeholder='Start typing here'
           onChange={this.onChange}
         ></input>
-        <input type='submit'></input>
+        <input type='submit' value='>'></input>
       </form>
     );
   }

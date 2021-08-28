@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import '../styles/ReactCalendar.css';
 
 export default function ReactCalendar(props) {
   const [date, setDate] = useState(new Date());
@@ -12,6 +13,7 @@ export default function ReactCalendar(props) {
     <div>
       <Calendar onChange={onChange} value={date} />
       <button
+        id='calendarSubmit'
         onClick={() =>
           props.handleBirthday(
             date.getMonth(),

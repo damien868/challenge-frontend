@@ -1,0 +1,10 @@
+#calendarSubmit {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: rgb(108, 70, 214);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+}

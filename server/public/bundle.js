@@ -607,8 +607,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ReactCalendar)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-calendar */ "./node_modules/react-calendar/dist/esm/index.js");
+/* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-calendar */ "./node_modules/react-calendar/dist/esm/index.js");
 /* harmony import */ var react_calendar_dist_Calendar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-calendar/dist/Calendar.css */ "./node_modules/react-calendar/dist/Calendar.css");
+/* harmony import */ var _styles_ReactCalendar_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/ReactCalendar.css */ "./client/styles/ReactCalendar.css");
+
 
 
 
@@ -619,10 +621,11 @@ function ReactCalendar(props) {
     setDate(date);
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_2__.default, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_3__.default, {
     onChange: onChange,
     value: date
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    id: "calendarSubmit",
     onClick: () => props.handleBirthday(date.getMonth(), date.getDate(), date.getFullYear())
   }, "Submit"));
 }
@@ -746,6 +749,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class Textbox extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor(props) {
     super(props);
@@ -779,7 +783,8 @@ class Textbox extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       placeholder: "Start typing here",
       onChange: this.onChange
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-      type: "submit"
+      type: "submit",
+      value: ">"
     }));
   }
 
@@ -903,7 +908,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".question {\n  font-weight: bold;\n}\n#textbox {\n  position: fixed;\n  bottom: 10px;\n  left: 50%;\n}\n.response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/FirstQuestion.css"],"names":[],"mappings":"AAAA;EACE,iBAAiB;AACnB;AACA;EACE,eAAe;EACf,YAAY;EACZ,SAAS;AACX;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,yBAAyB;AAC3B","sourcesContent":[".question {\n  font-weight: bold;\n}\n#textbox {\n  position: fixed;\n  bottom: 10px;\n  left: 50%;\n}\n.response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".question {\n  font-weight: bold;\n}\n#textbox {\n  position: fixed;\n  bottom: 10px;\n  left: 10%;\n  width: 75%;\n}\n.response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/FirstQuestion.css"],"names":[],"mappings":"AAAA;EACE,iBAAiB;AACnB;AACA;EACE,eAAe;EACf,YAAY;EACZ,SAAS;EACT,UAAU;AACZ;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,yBAAyB;AAC3B","sourcesContent":[".question {\n  font-weight: bold;\n}\n#textbox {\n  position: fixed;\n  bottom: 10px;\n  left: 10%;\n  width: 75%;\n}\n.response {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -937,6 +942,33 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".choices {\n  display: flex;\n  flex-d
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./client/styles/ReactCalendar.css":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./client/styles/ReactCalendar.css ***!
+  \*******************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#calendarSubmit {\n  padding: 5px;\n  margin: 5px;\n  border-radius: 10px;\n  background-color: rgb(108, 70, 214);\n  color: white;\n  display: flex;\n  justify-content: flex-end;\n  align-content: flex-end;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/ReactCalendar.css"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,WAAW;EACX,mBAAmB;EACnB,mCAAmC;EACnC,YAAY;EACZ,aAAa;EACb,yBAAyB;EACzB,uBAAuB;AACzB","sourcesContent":["#calendarSubmit {\n  padding: 5px;\n  margin: 5px;\n  border-radius: 10px;\n  background-color: rgb(108, 70, 214);\n  color: white;\n  display: flex;\n  justify-content: flex-end;\n  align-content: flex-end;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./client/styles/Textbox.css":
 /*!*************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./client/styles/Textbox.css ***!
@@ -957,7 +989,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "input[type='text'] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-sizing: border-box;\n  padding: 5px;\n  margin: 5px;\n}\ninput[type='submit'] {\n  width: 100%;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n  padding: 5px;\n  margin: 5px;\n}\nform {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  justify-content: center;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/Textbox.css"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,qBAAqB;EACrB,sBAAsB;EACtB,kBAAkB;EAClB,sBAAsB;EACtB,YAAY;EACZ,WAAW;AACb;AACA;EACE,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,YAAY;EACZ,WAAW;AACb;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,qBAAqB;EACrB,uBAAuB;AACzB","sourcesContent":["input[type='text'] {\n  width: 100%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-sizing: border-box;\n  padding: 5px;\n  margin: 5px;\n}\ninput[type='submit'] {\n  width: 100%;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n  padding: 5px;\n  margin: 5px;\n}\nform {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  justify-content: center;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "input[type='text'] {\n  width: 70%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-sizing: border-box;\n  padding: 5px;\n  margin: 5px;\n}\ninput[type='submit'] {\n  width: 5%;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n  padding: 5px;\n  margin: 5px;\n}\nform {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  justify-content: center;\n}\n", "",{"version":3,"sources":["webpack://./client/styles/Textbox.css"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,kBAAkB;EAClB,aAAa;EACb,qBAAqB;EACrB,sBAAsB;EACtB,kBAAkB;EAClB,sBAAsB;EACtB,YAAY;EACZ,WAAW;AACb;AACA;EACE,SAAS;EACT,kBAAkB;EAClB,aAAa;EACb,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,YAAY;EACZ,WAAW;AACb;AACA;EACE,aAAa;EACb,mBAAmB;EACnB,qBAAqB;EACrB,uBAAuB;AACzB","sourcesContent":["input[type='text'] {\n  width: 70%;\n  padding: 12px 20px;\n  margin: 8px 0;\n  display: inline-block;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-sizing: border-box;\n  padding: 5px;\n  margin: 5px;\n}\ninput[type='submit'] {\n  width: 5%;\n  padding: 14px 20px;\n  margin: 8px 0;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n  padding: 5px;\n  margin: 5px;\n}\nform {\n  display: flex;\n  flex-direction: row;\n  align-content: center;\n  justify-content: center;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35525,6 +35557,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Pronouns_css__WEBPACK_IMPORTED_MODULE_6__.default && _node_modules_css_loader_dist_cjs_js_Pronouns_css__WEBPACK_IMPORTED_MODULE_6__.default.locals ? _node_modules_css_loader_dist_cjs_js_Pronouns_css__WEBPACK_IMPORTED_MODULE_6__.default.locals : undefined);
+
+
+/***/ }),
+
+/***/ "./client/styles/ReactCalendar.css":
+/*!*****************************************!*\
+  !*** ./client/styles/ReactCalendar.css ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ReactCalendar_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./ReactCalendar.css */ "./node_modules/css-loader/dist/cjs.js!./client/styles/ReactCalendar.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ReactCalendar_css__WEBPACK_IMPORTED_MODULE_6__.default, options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ReactCalendar_css__WEBPACK_IMPORTED_MODULE_6__.default && _node_modules_css_loader_dist_cjs_js_ReactCalendar_css__WEBPACK_IMPORTED_MODULE_6__.default.locals ? _node_modules_css_loader_dist_cjs_js_ReactCalendar_css__WEBPACK_IMPORTED_MODULE_6__.default.locals : undefined);
 
 
 /***/ }),

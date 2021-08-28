@@ -4,7 +4,8 @@
 #textbox {
   position: fixed;
   bottom: 10px;
-  left: 50%;
+  left: 10%;
+  width: 75%;
 }
 .response {
   display: flex;
